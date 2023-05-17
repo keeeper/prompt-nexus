@@ -21,7 +21,7 @@ const Nav = () => {
   return (
     <nav className="w-full flex-between pt-3 mb-16">
       <Link href="/" className="flex-center gap-2">
-        <Image src="/images/logo.svg" width={50} height={50} alt="Logo" /><span className="font-wix text-bold text-lg">Prompt Nexus</span>
+        <Image src="/images/logo.svg" width={50} height={50} alt="Logo" /><span className="hidden sm:flex font-wix text-bold text-lg">Prompt Nexus</span>
       </Link>
       <div className="sm:flex hidden">
         {session?.user ? (
