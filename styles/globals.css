@@ -25,6 +25,10 @@
   @apply flex items-center justify-center rounded-full border border-primary bg-transparent py-1.5 px-5 text-primary transition-all hover:bg-primary hover:text-white text-center text-sm font-inter;
 }
 
+.btn-link {
+  @apply font-inter text-sm cursor-pointer outline-none hover:opacity-80 transition
+}
+
 .heading {
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-dark sm:text-6xl;
 }
@@ -34,7 +38,7 @@
 }
 
 .search-input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-wix pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-md border border-secondary bg-white py-2.5 font-wix pl-5 pr-12 text-sm font-medium focus:border-primary focus:outline-none focus:ring-0;
 }
 
 .btn-copy {
