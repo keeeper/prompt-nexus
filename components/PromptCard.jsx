@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
   const {data: session} = useSession();
   const pathName = usePathname();
+  const router = useRouter();
   const [copied, setCopied] = useState("");
 
   const handleCopy = () => {
@@ -16,13 +17,18 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
     setTimeout(()=>{setCopied("")}, 3000);
   }
 
+  const handleNameClick = () => {
+    if (post.creator._id === session?.user.id) return router.push("/profile");
+    router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
+  }
+
   return (
     <div className="prompt-card">
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
           <Image src={post.creator.image} width={40} height={40} alt="User avatar" className="rounded-full object-contain"/>
           <div className="flex flex-col">
-            <h3 className="font-wix font-semibold text-gray-900">{post.creator.username}</h3>
+            <h3 className="font-wix font-semibold text-gray-900" onClick={handleNameClick}>{post.creator.username}</h3>
           </div>
         </div>
         <div className="btn-copy" onClick={handleCopy}>

@@ -4,7 +4,7 @@ const Profile = ({name, desc, data, handleEdit, handleDelete}) => {
   return (
     <section className="w-full">
       <h1 className="heading text-left">
-        <span>{name}'s Profile</span>
+        <span>{name}'s profile</span>
       </h1>
       <p className="description text-left">{desc}</p>
       <div className="prompt-grid mt-10">
