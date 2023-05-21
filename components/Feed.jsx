@@ -43,6 +43,10 @@ const Feed = () => {
     setSearchText(lowercaseSearchText);
   }
 
+  const handleSearchReset = () => {
+    setSearchText("");
+  }
+
   const handleTagClick = (tag) => {
     const lowercaseSearchText = tag.toLowerCase();
     setSearchText(lowercaseSearchText);
@@ -50,8 +54,12 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <SearchForm placeholder="Search for tag, username or keyword" value={searchText} handleChange={handleSearchChange} />
-      <PromptCardList data={filteredPosts.length > 0 ? filteredPosts : posts} handleTagClick={handleTagClick} />
+      <SearchForm placeholder="Search for tag, username or keyword" value={searchText} handleChange={handleSearchChange} handleReset={handleSearchReset} />
+      {searchText ? (
+        <PromptCardList data={filteredPosts} handleTagClick={handleTagClick} />
+      ) : (
+        <PromptCardList data={posts} handleTagClick={handleTagClick} />
+      )}
     </section>
   )
 }
