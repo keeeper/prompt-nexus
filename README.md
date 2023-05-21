@@ -1,6 +1,7 @@
 # Prompt Nexus
 Full stack application that helps people to find and share prompts for AI.
 
+
 ## Features
 
 - Add own prompts / read prompts added by others
@@ -8,6 +9,7 @@ Full stack application that helps people to find and share prompts for AI.
 - View profiles of other users
 - Search prompts by keyword, tag, author's username
 - Filter prompts by tag
+- Copy prompt text
 
 
 ## Tech stack
@@ -21,4 +23,4 @@ Full stack application that helps people to find and share prompts for AI.
 
 ## Live demo
 
-Soon
+Live demo: https://prompt-nexus.vercel.app
