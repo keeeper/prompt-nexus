@@ -43,6 +43,10 @@ const Feed = () => {
     setSearchText(lowercaseSearchText);
   }
 
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+  }
+
   const handleSearchReset = () => {
     setSearchText("");
   }
@@ -54,7 +58,7 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <SearchForm placeholder="Search for tag, username or keyword" value={searchText} handleChange={handleSearchChange} handleReset={handleSearchReset} />
+      <SearchForm placeholder="Search for tag, username or keyword" value={searchText} handleSubmit={handleSearchSubmit} handleChange={handleSearchChange} handleReset={handleSearchReset} />
       {searchText ? (
         <PromptCardList data={filteredPosts} handleTagClick={handleTagClick} />
       ) : (
